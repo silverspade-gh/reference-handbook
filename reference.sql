@@ -29,11 +29,17 @@ DROP COLUMN
 
 -- Insert values into columns
 INSERT INTO table_name (column1, column2, ...)
-VALUES (
-  value_for_column1,
-  value_for_column2,
+VALUES 
+  (
+  value_for_column1_row1,
+  value_for_column2_row2,
   ...
-);
+  ),
+  (
+  value_for_column1_row2,
+  value_for_column2_row2,
+  ...
+  );
 
 -- Edit values in column(s)
 UPDATE table_name
