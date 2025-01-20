@@ -72,3 +72,7 @@ SET
 
 -- Triggers respond to INSERT, UPDATE and DELETE operations.
 -- This trigger adds the user
+
+-- Create an arbitrary table of ten rows containing the value 1
+SELECT 1
+FROM generate_series(1, 10);
