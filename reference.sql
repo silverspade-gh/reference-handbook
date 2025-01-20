@@ -41,6 +41,15 @@ VALUES
   ...
   );
 
+/* Insert values by selecting pre-existing ones
+** This query inserts a row containing two fields, column1's field and the value 'Disney'
+** If the position attribute of that row matches the case-insensitive pattern of characters 'Analyst'
+*/
+INSERT INTO table2 (column1, column2) 
+SELECT column1, 'Disney'
+FROM users
+WHERE position ILIKE 'Analyst';
+
 -- Edit values in column(s)
 UPDATE table_name
 SET 
@@ -50,3 +59,16 @@ SET
 [WHERE condition1] -- conditionals identify rows in the aforementioned columns that should have their values changed
 [AND condition2]
 [OR condition3];
+
+/* When constructing WHERE queries, you can use LIKE/ILIKE operators and wildcards for pattern matching.
+** Use 'LIKE' instead of '=' 
+**
+** Use the '%' symbol to represent an indeterminate amount of characters as in WHERE name LIKE '%John'
+** This can return results such as "arbitrarytextbeforeJohn John".
+**
+** Use '_' for an unknown character, as in WHERE name LIKE '__ent'
+** This can return results such as "Agent", "Spent", "Trent", etc.
+*/
+
+-- Triggers respond to INSERT, UPDATE and DELETE operations.
+-- This trigger adds the user
