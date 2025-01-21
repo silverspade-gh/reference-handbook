@@ -8,6 +8,13 @@
 SELECT *
 FROM table_name;
 
+-- Display a table that is ordered from highest to lowest on column_name
+-- Limited to 10 rows
+SELECT *
+FROM table_name
+ORDER BY column_name DESC
+LIMIT 10;
+
 -- Table description
 psql \d table_name;
 
