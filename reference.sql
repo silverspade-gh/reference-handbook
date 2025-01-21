@@ -83,3 +83,13 @@ SET
 -- Create an arbitrary table of ten rows containing the value 1
 SELECT 1
 FROM generate_series(1, 10);
+
+-- Test for existence of rows
+-- This will return column1's fields if condition1 is satisfied in the sub-query
+SELECT column1
+FROM table1
+WHERE EXISTS (
+    SELECT 1
+    FROM table2
+    WHERE [condition1]
+);
