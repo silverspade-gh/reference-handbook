@@ -38,6 +38,10 @@ DROP COLUMN
 ALTER TABLE table_name
 ALTER COLUMN column_name TYPE new_type [USING CASE WHEN condition THEN type_cast_1 ELSE type_cast_2]
 
+-- Add a UNIQUE constraint of a column
+ALTER TABLE words
+ADD CONSTRAINT pinyin_is_unique UNIQUE (pinyin);
+
 -- Insert values into columns
 INSERT INTO table_name (column1, column2, ...)
 VALUES 
