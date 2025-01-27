@@ -40,7 +40,7 @@ ALTER COLUMN column_name TYPE new_type [USING CASE WHEN condition THEN type_cast
 
 -- Add a UNIQUE constraint of a column
 ALTER TABLE words
-ADD CONSTRAINT pinyin_is_unique UNIQUE (pinyin);
+ADD CONSTRAINT column1_is_unique UNIQUE (column1);
 
 -- Insert values into columns
 INSERT INTO table_name (column1, column2, ...)
