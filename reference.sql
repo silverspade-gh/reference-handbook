@@ -34,6 +34,10 @@ DROP COLUMN
   column2,
   ...;
 
+-- Change data type of column
+ALTER TABLE table_name
+ALTER COLUMN column_name TYPE new_type [USING CASE WHEN condition THEN type_cast_1 ELSE type_cast_2]
+
 -- Insert values into columns
 INSERT INTO table_name (column1, column2, ...)
 VALUES 
