@@ -135,3 +135,7 @@ grant web_anon TO authenticator;
 db-uri = "postgres://authenticator:mysecretpassword@my_host_address:5432/my_db_name"
 db-schemas = "my_schema_name"
 db-anon-role = "web_anon"
+
+-- Example Postgrest API read-call
+-- Retrieve all rows containing the case-insensitive pattern "zar" within column_name
+> http://myhostname:3000/table_name?column_name=ilike(all).{*zar*}
