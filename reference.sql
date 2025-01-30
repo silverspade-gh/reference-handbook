@@ -107,3 +107,31 @@ WHERE EXISTS (
     FROM table2
     WHERE [condition1]
 );
+
+-- Quit PostgreSQL
+psql \q
+
+/* 
+** Postgrest configuration 
+*/
+
+-- Install Postgrest on AL 2023 from binary
+$ wget https://github.com/PostgREST/postgrest/releases/download/v12.2.6/postgrest-v12.2.6-linux-s
+tatic-x86-64.tar.xz
+$ tar xJf postgrest-v12.2.6-linux-static-x86-64.tar.xz
+$ rm postgrest-*
+$ mv postgrest /usr/local/bin
+
+-- Grant anonymous web user read-only access to database mydb via API
+CREATE ROLE web_anon nologin;
+GRANT usage ON SCHEMA public TO web_anon;
+GRANT select ON public.mydb TO web_anon;
+
+-- Connect to DB following the principle of least privilege
+CREATE ROLE authenticator noinherit login password 'securepassword';
+grant web_anon TO authenticator;
+
+-- dbinfo.conf file for serving the API
+db-uri = "postgres://authenticator:mysecretpassword@my_host_address:5432/my_db_name"
+db-schemas = "my_schema_name"
+db-anon-role = "web_anon"
