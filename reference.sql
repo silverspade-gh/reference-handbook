@@ -4,6 +4,13 @@
 
 /* Basics */
 
+-- Create Table
+CREATE TABLE table_name (
+  pkey DATA_TYPE [PRIMARY KEY GENERATED ALWAYS AS IDENTITY],
+  column2 DATA_TYPE [CONSTRAINT],
+  ...
+);
+
 -- Display table
 SELECT *
 FROM table_name;
