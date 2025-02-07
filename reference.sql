@@ -27,11 +27,9 @@ psql \d table_name;
 
 -- Add column(s)
 ALTER TABLE table_name
-ADD COLUMN (
-  column1 data_type1 [constraint1]
-  column2 data_type2 [constraint2],
-  ...
-);
+ADD COLUMN column1 data_type1 [constraint1].
+ADD COLUMN column2 data_type2 [constraint2],
+...;
 
 -- Drop column(s)
 -- Note the lack of parentheses
