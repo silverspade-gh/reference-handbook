@@ -22,6 +22,12 @@ FROM table_name
 ORDER BY column_name DESC
 LIMIT 10;
 
+-- Display a view
+CREATE VIEW my_view AS
+  [SELECT query]
+-- Add access if required
+GRANT SELECT ON my_view TO db_user;
+
 -- Table description
 psql \d table_name;
 
