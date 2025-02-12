@@ -1,0 +1,2 @@
+Q : What is the default value of a checked box?
+A : Default Value: If the value attribute is omitted, the checkbox will submit a value of "on" when it is checked. This is the default behavior of HTML checkboxes without a specified value.
