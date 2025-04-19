@@ -1,7 +1,2 @@
-1. Provision Azure VM with Fedora Cloud Workstation 42 (Fedora-5e266ba4-2250-406d-adad-5d73860d958f on Azure)
-2. Provision Port 3389 access for RDP and start the XRDP server:
-sudo dnf install xrdp
-sudo systemctl enable xrdp
-sudo systemctl start xrdp
-3. Install GNOME using "sudo dnf install @gnome-desktop"
-4. Connect and log in.
+Provision Azure VM with Fedora 42 Cloud Edition
+sudo dnf update -y
